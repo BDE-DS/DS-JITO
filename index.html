@@ -25,18 +25,16 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
-
   body {
     font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
     background: var(--cream);
     color: var(--ink);
-    font-size: 15px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* COVER */
+  /* ── COVER ── */
   .cover {
     min-height: 100vh;
     background: var(--ink);
@@ -51,71 +49,65 @@
   .cover-deco {
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(201,168,76,0.10);
+    border: 1px solid rgba(201,168,76,0.12);
     pointer-events: none;
   }
-  .cover-deco-1 { width: 520px; height: 520px; top: -140px; right: -140px; }
-  .cover-deco-2 { width: 320px; height: 320px; bottom: 40px; left: -80px; border-color: rgba(201,168,76,0.07); }
-  .cover-deco-3 { width: 180px; height: 180px; top: 200px; right: 60px; border-color: rgba(201,168,76,0.06); }
+  .cover-deco-1 { width: 480px; height: 480px; top: -120px; right: -120px; }
+  .cover-deco-2 { width: 280px; height: 280px; bottom: 60px; left: -80px; }
+  .cover-deco-3 { width: 160px; height: 160px; top: 40%; right: 80px; border-color: rgba(201,168,76,0.07); }
 
-  .cover-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+  .cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
 
-  .cover-brand {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+  .brand-mark {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 18px;
     color: var(--gold);
+    letter-spacing: 0.04em;
   }
 
-  .cover-confidential {
+  .confidential-tag {
     background: rgba(201,168,76,0.08);
     border: 1px solid rgba(201,168,76,0.2);
     border-radius: 20px;
     padding: 5px 14px;
     font-size: 11px;
+    color: rgba(201,168,76,0.6);
     font-family: 'DM Sans', sans-serif;
     font-weight: 500;
-    letter-spacing: 0.12em;
-    color: rgba(201,168,76,0.6);
+    letter-spacing: 0.18em;
     text-transform: uppercase;
   }
 
-  .cover-middle {
+  .cover-mid {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 60px 0 40px;
+    padding: 80px 0 60px;
   }
 
   .cover-eyebrow {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 28px;
+    gap: 14px;
+    margin-bottom: 32px;
   }
-
   .cover-eyebrow::before {
     content: '';
     display: block;
-    width: 48px;
     height: 1px;
-    background: var(--border);
+    width: 48px;
+    background: var(--gold);
+    opacity: 0.6;
   }
-
   .cover-eyebrow span {
-    font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
   }
 
   .cover-title {
@@ -123,222 +115,197 @@
     font-size: clamp(40px, 6vw, 72px);
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.05;
     color: var(--white);
+    line-height: 1.08;
     margin-bottom: 20px;
   }
 
-  .cover-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
   .cover-subtitle {
-    font-family: 'DM Sans', sans-serif;
     font-size: 15px;
     font-weight: 300;
     color: rgba(255,255,255,0.55);
-    letter-spacing: 0.02em;
-    max-width: 500px;
-    line-height: 1.6;
+    letter-spacing: 0.04em;
+    margin-bottom: 0;
   }
 
   .cover-bottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    padding-top: 40px;
     border-top: 1px solid rgba(201,168,76,0.12);
-    padding-top: 32px;
   }
 
-  .cover-meta-group {
-    display: flex;
-    gap: 48px;
-  }
-
-  .cover-meta-item {}
+  .cover-meta-group { display: flex; flex-direction: column; gap: 6px; }
 
   .cover-meta-label {
     font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
-    margin-bottom: 4px;
+    color: rgba(255,255,255,0.35);
+    font-family: 'DM Sans', sans-serif;
   }
 
   .cover-meta-value {
     font-family: 'Playfair Display', serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.88);
   }
 
-  .cover-investment {
-    text-align: right;
-  }
-
-  .cover-investment-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
-    margin-bottom: 4px;
-  }
-
-  .cover-investment-value {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(22px, 3vw, 30px);
-    font-weight: 700;
-    color: var(--gold);
-    letter-spacing: -0.01em;
-  }
-
-  .cover-investment-sub {
+  .pill-tag {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 20px;
+    padding: 5px 14px;
     font-size: 11px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.35);
-    margin-top: 2px;
+    color: rgba(201,168,76,0.8);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    display: inline-block;
   }
 
-  /* MAIN CONTENT */
-  .main {
+  /* ── MAIN CONTENT ── */
+  .page {
     max-width: 860px;
     margin: 0 auto;
     padding: 80px 40px;
   }
 
-  hr.divider {
+  hr.section-divider {
     border: none;
     border-top: 1px solid var(--border-light);
     margin: 64px 0;
   }
 
-  /* EYEBROW */
+  /* ── EYEBROW ── */
   .eyebrow {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
-
-  .eyebrow span {
-    font-family: 'DM Sans', sans-serif;
+    gap: 12px;
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 20px;
   }
-
   .eyebrow::after {
     content: '';
     display: block;
-    width: 48px;
     height: 1px;
+    width: 48px;
     background: var(--border);
   }
 
-  /* SECTION TITLES */
+  /* ── OVERVIEW BLOCK ── */
+  .overview-block {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 52px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .overview-deco {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.08);
+    pointer-events: none;
+  }
+  .overview-deco-1 { width: 320px; height: 320px; top: -80px; right: -80px; }
+  .overview-deco-2 { width: 180px; height: 180px; bottom: -40px; left: 40px; }
+
+  .overview-block .eyebrow { margin-bottom: 24px; }
+
+  .overview-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .overview-body {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.8;
+    max-width: 660px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .overview-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: 44px;
+    background: rgba(201,168,76,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-cell {
+    background: rgba(255,255,255,0.04);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  /* ── SECTION TITLE ── */
   .section-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(26px, 4vw, 38px);
     font-weight: 600;
     color: var(--ink);
+    margin-bottom: 8px;
     line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
   }
-
-  .section-title.light { color: var(--white); }
 
   .section-intro {
     font-size: 15px;
     font-weight: 300;
     color: var(--ink-soft);
     line-height: 1.8;
-    max-width: 640px;
     margin-bottom: 40px;
+    max-width: 600px;
   }
 
-  /* OVERVIEW GRID */
-  .overview-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--border-light);
-    border: 1px solid var(--border-light);
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 40px;
-  }
-
-  .overview-cell {
-    background: var(--white);
-    padding: 28px 24px;
-  }
-
-  .overview-cell-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .overview-cell-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1.3;
-  }
-
-  /* TRAINING OVERVIEW BLOCK */
-  .overview-block {
-    background: var(--ink);
-    border-radius: 16px;
-    padding: 48px 52px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .overview-block-deco {
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(201,168,76,0.08);
-    pointer-events: none;
-  }
-  .overview-block-deco-1 { width: 300px; height: 300px; top: -100px; right: -60px; }
-  .overview-block-deco-2 { width: 180px; height: 180px; bottom: -50px; left: 40px; }
-
-  .overview-block p {
-    font-size: 15px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.72);
-    line-height: 1.85;
-    position: relative;
-    z-index: 1;
-    max-width: 680px;
-  }
-
-  /* MODULE CARDS */
+  /* ── MODULE CARDS ── */
   .module-card {
     background: var(--white);
     border: 1px solid var(--border-light);
     border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
   .module-header {
     background: var(--ink);
-    padding: 28px 36px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 32px 40px 28px;
     position: relative;
     overflow: hidden;
   }
@@ -346,30 +313,38 @@
   .module-header-deco {
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(201,168,76,0.10);
+    border: 1px solid rgba(201,168,76,0.1);
     pointer-events: none;
   }
-  .module-header-deco-1 { width: 200px; height: 200px; top: -80px; right: -40px; }
+  .module-header-deco-1 { width: 200px; height: 200px; top: -60px; right: -40px; }
+  .module-header-deco-2 { width: 100px; height: 100px; bottom: -30px; right: 80px; }
 
-  .module-header-left {
+  .module-number-row {
     display: flex;
     align-items: center;
-    gap: 20px;
-    position: relative;
-    z-index: 1;
+    gap: 14px;
+    margin-bottom: 14px;
   }
 
-  .module-number {
+  .module-num {
     font-family: 'Playfair Display', serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    background: rgba(201,168,76,0.1);
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(201,168,76,0.18);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .module-tag {
+    background: rgba(201,168,76,0.08);
     border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 8px;
-    padding: 6px 14px;
-    white-space: nowrap;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 11px;
+    color: rgba(201,168,76,0.8);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.08em;
   }
 
   .module-title {
@@ -378,344 +353,242 @@
     font-weight: 600;
     color: var(--white);
     line-height: 1.3;
+    position: relative;
+    z-index: 1;
   }
 
   .module-duration {
+    margin-top: 10px;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.35);
-    white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
     position: relative;
     z-index: 1;
   }
 
   .module-body {
-    padding: 36px;
+    padding: 36px 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
-  .module-section-label {
+  .module-field { display: flex; flex-direction: column; gap: 10px; }
+  .module-field.full { grid-column: 1 / -1; }
+
+  .field-label {
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 12px;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .field-label::after {
+    content: '';
+    display: block;
+    height: 1px;
+    flex: 1;
+    background: var(--border-light);
   }
 
-  .module-objective {
-    font-size: 14px;
+  .field-body {
+    font-size: 13.5px;
     font-weight: 400;
     color: var(--ink-mid);
     line-height: 1.7;
   }
 
-  .module-topics {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .module-topics li {
-    font-size: 13.5px;
-    font-weight: 300;
-    color: var(--ink-soft);
-    line-height: 1.65;
-    padding: 10px 0 10px 20px;
-    border-bottom: 1px solid var(--border-light);
+  /* bullet list */
+  .topic-list { list-style: none; display: flex; flex-direction: column; }
+  .topic-list li {
     position: relative;
+    padding: 10px 0 10px 18px;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border-light);
   }
-
-  .module-topics li:last-child { border-bottom: none; }
-
-  .module-topics li::before {
+  .topic-list li:last-child { border-bottom: none; }
+  .topic-list li::before {
     content: '';
     position: absolute;
     left: 0;
     top: 18px;
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: var(--gold);
-    flex-shrink: 0;
   }
 
-  .module-outcome-block {
-    grid-column: 1 / -1;
+  .outcome-box {
     background: var(--gold-pale);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 20px 24px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .module-outcome-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    white-space: nowrap;
-    padding-top: 2px;
-  }
-
-  .module-outcome-text {
+    padding: 18px 22px;
     font-size: 13.5px;
     font-weight: 400;
     color: var(--ink-mid);
-    line-height: 1.65;
+    line-height: 1.7;
   }
 
-  /* SESSION GLANCE TABLE */
-  .glance-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border-light);
-  }
+  .tools-row { display: flex; flex-wrap: wrap; gap: 8px; }
 
-  .glance-table thead tr {
-    background: var(--ink);
-  }
-
-  .glance-table thead th {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    padding: 16px 24px;
-    text-align: left;
-  }
-
-  .glance-table tbody tr {
-    border-bottom: 1px solid var(--border-light);
-    background: var(--white);
-  }
-
-  .glance-table tbody tr:last-child { border-bottom: none; }
-  .glance-table tbody tr:nth-child(even) { background: var(--cream); }
-
-  .glance-table tbody td {
-    padding: 16px 24px;
-    font-size: 13.5px;
+  .tool-chip {
+    background: var(--cream-dark);
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 500;
     color: var(--ink-soft);
-    font-weight: 300;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.02em;
   }
 
-  .glance-table tbody td:first-child {
-    font-family: 'Playfair Display', serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
-  }
-
-  .glance-table tbody td:last-child {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--gold);
-    text-align: right;
-  }
-
-  /* INCLUDED SECTION */
-  .included-dark {
+  /* ── INVESTMENT BLOCK ── */
+  .investment-block {
     background: var(--ink);
     border-radius: 16px;
-    padding: 48px 52px;
+    padding: 52px 56px;
     position: relative;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
   }
-
-  .included-deco {
+  .investment-deco {
     position: absolute;
     border-radius: 50%;
     border: 1px solid rgba(201,168,76,0.08);
     pointer-events: none;
   }
-  .included-deco-1 { width: 360px; height: 360px; top: -120px; right: -80px; }
-
-  .included-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 28px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .included-item {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(201,168,76,0.12);
-    border-radius: 10px;
-    padding: 20px 22px;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .included-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--gold);
-    flex-shrink: 0;
-    margin-top: 6px;
-  }
-
-  .included-item-text {
-    font-size: 13.5px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
-  }
-
-  /* INVESTMENT BLOCK */
-  .investment-block {
-    background: var(--gold-pale);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 40px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 24px;
-  }
-
-  .investment-left {}
-
-  .investment-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
+  .investment-deco-1 { width: 360px; height: 360px; top: -100px; right: -100px; }
+  .investment-deco-2 { width: 200px; height: 200px; bottom: -60px; left: -40px; }
 
   .investment-amount {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 4vw, 44px);
+    font-size: clamp(36px, 5vw, 56px);
     font-weight: 700;
-    color: var(--ink);
+    color: var(--gold);
     letter-spacing: -0.02em;
     line-height: 1;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
   }
 
   .investment-note {
     font-size: 13px;
     font-weight: 300;
-    color: var(--ink-muted);
-    margin-top: 8px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 4px;
+    position: relative;
+    z-index: 1;
   }
 
-  .investment-right {
-    text-align: right;
-  }
-
-  .investment-tag {
-    background: rgba(201,168,76,0.08);
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 20px;
-    padding: 8px 20px;
+  .investment-sub {
     font-size: 12px;
-    font-weight: 500;
-    color: var(--ink-soft);
-    letter-spacing: 0.04em;
+    font-weight: 300;
+    color: rgba(255,255,255,0.35);
+    position: relative;
+    z-index: 1;
   }
 
-  /* FOOTER */
+  .inclusions-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .inclusion-list { list-style: none; display: flex; flex-direction: column; position: relative; z-index: 1; }
+  .inclusion-list li {
+    position: relative;
+    padding: 10px 0 10px 18px;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .inclusion-list li:last-child { border-bottom: none; }
+  .inclusion-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* ── FOOTER ── */
   footer {
     background: var(--ink);
     padding: 40px 64px;
-  }
-
-  .footer-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
   .footer-brand {
     font-family: 'Playfair Display', serif;
+    font-weight: 700;
     font-size: 18px;
-    font-weight: 600;
     color: var(--gold);
+    letter-spacing: 0.04em;
   }
 
-  .footer-brand span {
-    display: block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
-    margin-top: 4px;
-  }
-
-  .footer-meta {
+  .footer-center {
     font-size: 12px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.3);
-    text-align: right;
-    line-height: 1.6;
-  }
-
-  .footer-divider {
-    border: none;
-    border-top: 1px solid rgba(201,168,76,0.1);
-    margin: 0 0 20px;
-  }
-
-  .footer-confidential {
-    text-align: center;
-    font-size: 11px;
     font-weight: 400;
-    letter-spacing: 0.12em;
-    color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+    text-align: center;
   }
 
-  /* RESPONSIVE */
+  .footer-confidentiality {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding-top: 20px;
+    border-top: 1px solid rgba(201,168,76,0.08);
+    margin-top: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
   @media (max-width: 700px) {
     .cover { padding: 40px 28px; }
-
     .cover-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .cover-meta-group { flex-wrap: wrap; gap: 24px; }
-    .cover-investment { text-align: left; }
-
-    .main { padding: 48px 24px; }
-
-    .overview-grid { grid-template-columns: 1fr 1fr; }
-
-    .overview-block { padding: 32px 28px; }
-
-    .module-header { flex-direction: column; align-items: flex-start; gap: 12px; padding: 24px 24px; }
-
-    .module-body { grid-template-columns: 1fr; padding: 28px 24px; gap: 24px; }
-
-    .included-dark { padding: 32px 28px; }
-    .included-grid { grid-template-columns: 1fr; }
-
-    .investment-block { flex-direction: column; align-items: flex-start; gap: 20px; padding: 32px 28px; }
-    .investment-right { text-align: left; }
-
-    footer { padding: 36px 28px; }
-    .footer-main { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .footer-meta { text-align: left; }
-
-    .glance-table thead th:last-child,
-    .glance-table tbody td:last-child { display: none; }
+    .cover-top { flex-direction: column; gap: 16px; }
+    .page { padding: 48px 24px; }
+    .overview-block { padding: 36px 28px; }
+    .overview-stats { grid-template-columns: repeat(2, 1fr); }
+    .module-body { grid-template-columns: 1fr; }
+    .module-field.full { grid-column: 1; }
+    .module-header { padding: 28px 24px; }
+    .module-body { padding: 28px 24px; }
+    .investment-block { grid-template-columns: 1fr; padding: 36px 28px; gap: 32px; }
+    footer { flex-direction: column; align-items: flex-start; padding: 36px 28px; }
+    .footer-center { text-align: left; }
   }
 </style>
 </head>
@@ -728,132 +601,106 @@
   <div class="cover-deco cover-deco-3"></div>
 
   <div class="cover-top">
-    <div class="cover-brand">Digital Scholar</div>
-    <div class="cover-confidential">Confidential</div>
+    <div class="brand-mark">Digital Scholar</div>
+    <div class="confidential-tag">Confidential</div>
   </div>
 
-  <div class="cover-middle">
+  <div class="cover-mid">
     <div class="cover-eyebrow">
-      <span>Corporate Training Proposal</span>
+      <span>Training Proposal</span>
     </div>
-    <h1 class="cover-title">AI for<br><em>Business Leaders</em></h1>
-    <p class="cover-subtitle">A 4-Hour Power Session for the Next Generation of Family Business Leaders</p>
+    <h1 class="cover-title">AI for Business<br>Leaders</h1>
+    <p class="cover-subtitle">A 2-Hour Power Session for the Next Generation of Family Business Leaders</p>
   </div>
 
   <div class="cover-bottom">
     <div class="cover-meta-group">
-      <div class="cover-meta-item">
-        <div class="cover-meta-label">Client</div>
-        <div class="cover-meta-value">JITO Hyderabad</div>
-      </div>
-      <div class="cover-meta-item">
-        <div class="cover-meta-label">Audience</div>
-        <div class="cover-meta-value">Youth Members</div>
-      </div>
-      <div class="cover-meta-item">
-        <div class="cover-meta-label">Participants</div>
-        <div class="cover-meta-value">60 to 100</div>
-      </div>
-      <div class="cover-meta-item">
-        <div class="cover-meta-label">Duration</div>
-        <div class="cover-meta-value">4 Hours</div>
-      </div>
+      <div class="cover-meta-label">Client</div>
+      <div class="cover-meta-value">JITO Hyderabad</div>
     </div>
-    <div class="cover-investment">
-      <div class="cover-investment-label">Investment</div>
-      <div class="cover-investment-value">INR 4,00,000</div>
-      <div class="cover-investment-sub">+ 18% GST + Conveyance</div>
+    <div class="cover-meta-group">
+      <div class="cover-meta-label">Audience</div>
+      <div class="cover-meta-value">Youth Members</div>
+    </div>
+    <div class="cover-meta-group">
+      <div class="cover-meta-label">Participants</div>
+      <div class="cover-meta-value">60 to 100</div>
+    </div>
+    <div class="cover-meta-group">
+      <div class="cover-meta-label">Duration</div>
+      <div class="cover-meta-value">2 Hours</div>
     </div>
   </div>
 </section>
 
 <!-- MAIN -->
-<main class="main">
+<main class="page">
 
-  <!-- TRAINING OVERVIEW -->
-  <div class="eyebrow"><span>Training Overview</span></div>
-  <h2 class="section-title">What This Session Is Built For</h2>
-
+  <!-- OVERVIEW -->
   <div class="overview-block">
-    <div class="overview-block-deco overview-block-deco-1"></div>
-    <div class="overview-block-deco overview-block-deco-2"></div>
-    <p>A high-energy, hands-on 4-hour session built for JITO youth members running or entering family businesses across mixed industries. Four focused modules: AI literacy to set the foundation, prompt engineering to build the core skill, GenAI for business to show real use cases and common mistakes, and a full Claude masterclass to set up a working AI system for their business. Every concept is demonstrated live. Every module ends with a challenge the room participates in.</p>
+    <div class="overview-deco overview-deco-1"></div>
+    <div class="overview-deco overview-deco-2"></div>
+    <div class="eyebrow">Training Overview</div>
+    <h2 class="overview-title">What This Session Is Built To Do</h2>
+    <p class="overview-body">
+      A high-energy, hands-on 2-hour session built for JITO youth members running or entering family businesses across mixed industries. Three focused modules cover AI literacy to set the foundation, prompt engineering to build the core skill, and GenAI for business to show real use cases, common mistakes, and a live automation example. Every concept is demonstrated live. Every module ends with a challenge the room participates in.
+    </p>
+    <div class="overview-stats">
+      <div class="stat-cell">
+        <div class="stat-label">Client</div>
+        <div class="stat-value">JITO Hyderabad</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">Participants</div>
+        <div class="stat-value">60 to 100</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">Total Modules</div>
+        <div class="stat-value">3</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">Duration</div>
+        <div class="stat-value">2 Hours</div>
+      </div>
+    </div>
   </div>
 
-  <hr class="divider">
-
-  <!-- SESSION GLANCE -->
-  <div class="eyebrow"><span>Session at a Glance</span></div>
-  <h2 class="section-title">Four Modules. One Complete System.</h2>
-  <p class="section-intro">Each module builds on the last. By the end of the session, participants do not just understand AI. They have used it, built with it, and have a plan to keep going.</p>
-
-  <table class="glance-table">
-    <thead>
-      <tr>
-        <th>Module</th>
-        <th>Topic</th>
-        <th>Duration</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Module 1</td>
-        <td>AI Literacy. What It Is, What It Is Not, and Why It Matters Now</td>
-        <td>60 min</td>
-      </tr>
-      <tr>
-        <td>Module 2</td>
-        <td>Prompt Engineering. The Skill Nobody Taught You</td>
-        <td>60 min</td>
-      </tr>
-      <tr>
-        <td>Module 3</td>
-        <td>GenAI for Your Business. Real Use Cases, Not Theory</td>
-        <td>60 min</td>
-      </tr>
-      <tr>
-        <td>Module 4</td>
-        <td>Claude Masterclass. The Full Ecosystem Walkthrough</td>
-        <td>60 min</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <hr class="divider">
+  <hr class="section-divider">
 
   <!-- MODULES -->
-  <div class="eyebrow"><span>Curriculum</span></div>
+  <div class="eyebrow">Curriculum</div>
   <h2 class="section-title">Module-by-Module Breakdown</h2>
-  <p class="section-intro">Every module is built around live demonstration and active participation. No one sits and watches for 4 hours.</p>
+  <p class="section-intro">Three tightly structured modules, each 40 minutes. Built to move fast, stay practical, and leave every participant with something they can use the same week.</p>
 
   <!-- MODULE 1 -->
   <div class="module-card">
     <div class="module-header">
       <div class="module-header-deco module-header-deco-1"></div>
-      <div class="module-header-left">
-        <div class="module-number">Module 01</div>
-        <div class="module-title">AI Literacy. What It Is, What It Is Not, and Why It Matters Now</div>
+      <div class="module-header-deco module-header-deco-2"></div>
+      <div class="module-number-row">
+        <div class="module-num">01</div>
+        <div class="module-tag">Foundation</div>
       </div>
-      <div class="module-duration">60 Minutes</div>
+      <div class="module-title">AI Literacy. What It Is, What It Is Not, and Why It Matters Now</div>
     </div>
     <div class="module-body">
-      <div>
-        <div class="module-section-label">Objective</div>
-        <p class="module-objective">Every participant understands what AI actually is, how it fits their business, and why the window to act early is right now.</p>
+      <div class="module-field full">
+        <div class="field-label">Objective</div>
+        <div class="outcome-box">Every participant understands what AI actually is, how it fits their business, and why the window to act early is right now.</div>
       </div>
-      <div>
-        <div class="module-section-label">Topics Covered</div>
-        <ul class="module-topics">
-          <li>What AI is and what it is not. Kill the sci-fi myths in the first 5 minutes. We cover the actual definition, how large language models work without the jargon, and why AI in 2025 is fundamentally different from anything that came before.</li>
-          <li>How family businesses in retail, manufacturing, and services are already using AI today. Real examples, real numbers, real time saved. Not case studies from Silicon Valley. Examples from businesses that look like theirs.</li>
-          <li>The shift from AI as a tool to AI as a team member who never sleeps. What changes when you stop using AI occasionally and start delegating to it systematically.</li>
-          <li>ChatGPT vs Claude vs Gemini vs Grok vs Perplexity. A live side-by-side comparison on the same task so the room can see the difference, not just hear about it.</li>
-          <li>The only mindset shift that matters. Stop typing queries. Start giving assignments. Why this one change determines whether AI saves you 30 minutes a week or 30 hours.</li>
+      <div class="module-field full">
+        <div class="field-label">Topics Covered</div>
+        <ul class="topic-list">
+          <li>What AI is and what it is not. Kill the sci-fi myths in the first 5 minutes.</li>
+          <li>How family businesses in retail, manufacturing, and services are already using AI today.</li>
+          <li>The shift from AI as a tool to AI as a team member who never sleeps.</li>
+          <li>ChatGPT vs Claude vs Gemini. Which one to actually use and why.</li>
+          <li>The only mindset shift that matters. Stop typing queries. Start giving assignments.</li>
         </ul>
       </div>
-      <div class="module-outcome-block">
-        <div class="module-outcome-label">Outcome</div>
-        <div class="module-outcome-text">Participants understand the real-world stakes, can tell the difference between the major AI tools, and know exactly which one fits their business type and why.</div>
+      <div class="module-field full">
+        <div class="field-label">Outcome</div>
+        <div class="field-body">Participants understand the real-world stakes and can correctly identify which AI tool fits their business type.</div>
       </div>
     </div>
   </div>
@@ -862,31 +709,31 @@
   <div class="module-card">
     <div class="module-header">
       <div class="module-header-deco module-header-deco-1"></div>
-      <div class="module-header-left">
-        <div class="module-number">Module 02</div>
-        <div class="module-title">Prompt Engineering. The Skill Nobody Taught You</div>
+      <div class="module-header-deco module-header-deco-2"></div>
+      <div class="module-number-row">
+        <div class="module-num">02</div>
+        <div class="module-tag">Core Skill</div>
       </div>
-      <div class="module-duration">60 Minutes</div>
+      <div class="module-title">Prompt Engineering. The Skill Nobody Taught You</div>
     </div>
     <div class="module-body">
-      <div>
-        <div class="module-section-label">Objective</div>
-        <p class="module-objective">Participants move from vague one-liners to structured prompts that get finished, usable work on the first try.</p>
+      <div class="module-field full">
+        <div class="field-label">Objective</div>
+        <div class="outcome-box">Participants move from vague one-liners to structured prompts that get finished, usable work on the first try.</div>
       </div>
-      <div>
-        <div class="module-section-label">Topics Covered</div>
-        <ul class="module-topics">
-          <li>Why bad prompts waste time and how to spot them instantly. We show the 5 most common prompting mistakes business owners make and what each one costs in time and output quality.</li>
-          <li>The RCTF framework: Role, Context, Task, Format. The one structure that works across every business use case, every tool, and every department. Once you know this, you never prompt blindly again.</li>
-          <li>Live demo: Same business task, 3 different prompts, 3 wildly different outputs. The room votes on the winner and we break down exactly why it won.</li>
-          <li>Hands-on prompting round: every participant writes a prompt for a real task from their own business. Rishi reviews live, corrects in real time, and shows the improved output on screen.</li>
-          <li>Business prompts that actually get used: vendor negotiation emails, staff briefings, sales pitch scripts, Instagram captions, WhatsApp broadcasts, and investor summaries. Built live, not just described.</li>
-          <li>The one-shot vs multi-shot approach. When to refine the prompt vs when to start over. How to have a conversation with AI instead of shouting instructions at it.</li>
+      <div class="module-field full">
+        <div class="field-label">Topics Covered</div>
+        <ul class="topic-list">
+          <li>Why bad prompts waste time and how to spot them instantly.</li>
+          <li>The RCTF framework: Role, Context, Task, Format. One structure that works across every use case.</li>
+          <li>Live demo: Same task, 3 different prompts, 3 wildly different outputs. The room decides the winner.</li>
+          <li>Business prompts for your world: vendor emails, staff briefings, social media captions, sales pitches.</li>
+          <li>The one-shot vs multi-shot approach. When to refine vs when to restart.</li>
         </ul>
       </div>
-      <div class="module-outcome-block">
-        <div class="module-outcome-label">Outcome</div>
-        <div class="module-outcome-text">Participants leave with the RCTF framework memorised, at least one business prompt they built themselves during the session, and the ability to get usable output from any AI tool on the first or second try.</div>
+      <div class="module-field full">
+        <div class="field-label">Outcome</div>
+        <div class="field-body">Participants can write a structured business prompt independently and get a ready-to-use output within two tries.</div>
       </div>
     </div>
   </div>
@@ -895,151 +742,65 @@
   <div class="module-card">
     <div class="module-header">
       <div class="module-header-deco module-header-deco-1"></div>
-      <div class="module-header-left">
-        <div class="module-number">Module 03</div>
-        <div class="module-title">GenAI for Your Business. Real Use Cases, Not Theory</div>
+      <div class="module-header-deco module-header-deco-2"></div>
+      <div class="module-number-row">
+        <div class="module-num">03</div>
+        <div class="module-tag">Application</div>
       </div>
-      <div class="module-duration">60 Minutes</div>
+      <div class="module-title">GenAI for Your Business. Real Use Cases, Not Theory</div>
     </div>
     <div class="module-body">
-      <div>
-        <div class="module-section-label">Objective</div>
-        <p class="module-objective">Every participant walks away with AI use cases mapped to their specific business function and a clear picture of what AI can do across every major area of their work.</p>
+      <div class="module-field full">
+        <div class="field-label">Objective</div>
+        <div class="outcome-box">Every participant walks away with AI use cases they can test in their own business before the week ends, plus a live look at how automation works.</div>
       </div>
-      <div>
-        <div class="module-section-label">Topics Covered</div>
-        <ul class="module-topics">
-          <li>Content and marketing at speed: product descriptions, Instagram captions, WhatsApp broadcast messages, sales pitches, email newsletters, and ad copy. All built live during the session using real business scenarios from the room.</li>
-          <li>Visual content without a designer: how to use AI image and video tools to create product visuals, presentation decks, explainer videos, and branded content in minutes, not days.</li>
-          <li>Operations and sales support: SOP drafting, vendor comparison emails, follow-up templates, objection handling scripts, and meeting summaries. Practical outputs a business can use the same week.</li>
-          <li>Common mistakes every business owner makes with AI: hallucinations and how to catch them, the copy-paste trap, what data should never go into a public AI tool, and a 60-second review habit that prevents 90 percent of costly errors.</li>
-          <li>Rapid-fire live build: someone from the audience names a real business problem. Rishi builds the AI output on screen in 90 seconds. No prep. No script.</li>
-          <li>A curated walkthrough of the best AI tools available today by category: content, visuals, research, communication, and productivity. Not a list. A live demo of each one on a real task so the room knows what to reach for and when.</li>
+      <div class="module-field full">
+        <div class="field-label">Topics Covered</div>
+        <ul class="topic-list">
+          <li>Content and marketing: product descriptions, Instagram captions, WhatsApp broadcast messages, and sales pitches built in seconds.</li>
+          <li>Operations and sales: SOP drafting, vendor comparison emails, follow-up templates, and objection handling scripts.</li>
+          <li>Common mistakes to avoid: hallucinations, the copy-paste trap, privacy risks, and a 60-second review habit that prevents 90 percent of errors.</li>
+          <li>Rapid-fire use case challenge: someone from the audience shouts a real business problem and Rishi builds the output live in 90 seconds.</li>
         </ul>
       </div>
-      <div class="module-outcome-block">
-        <div class="module-outcome-label">Outcome</div>
-        <div class="module-outcome-text">Participants identify their top three time-draining tasks, leave with AI-generated outputs for at least one of them built during the session, and know exactly which tool to use for every category of work in their business.</div>
+      <div class="module-field full">
+        <div class="field-label">Outcome</div>
+        <div class="field-body">Participants identify their top time-draining tasks, understand how to apply AI immediately, and see a working automation example mapped to a real business.</div>
       </div>
     </div>
   </div>
 
-  <!-- MODULE 4 -->
-  <div class="module-card">
-    <div class="module-header">
-      <div class="module-header-deco module-header-deco-1"></div>
-      <div class="module-header-left">
-        <div class="module-number">Module 04</div>
-        <div class="module-title">Claude Masterclass. The Full Ecosystem Walkthrough</div>
-      </div>
-      <div class="module-duration">60 Minutes</div>
-    </div>
-    <div class="module-body">
-      <div>
-        <div class="module-section-label">Objective</div>
-        <p class="module-objective">Participants go deep into Claude as a business operating system, covering why it wins over other tools and how to set it up to work for their specific business.</p>
-      </div>
-      <div>
-        <div class="module-section-label">Topics Covered</div>
-        <ul class="module-topics">
-          <li>Claude vs ChatGPT vs Gemini. A side-by-side comparison on memory, accuracy, file handling, and business-grade output quality.</li>
-          <li>Claude Projects and Memory setup. How to make Claude remember your business, your tone, and your preferences across every conversation.</li>
-          <li>Skills. How to build reusable instruction sets so Claude executes recurring tasks the same way every single time.</li>
-          <li>Claude for specific business workflows: content calendars, vendor communications, financial summaries, and team briefings built end to end.</li>
-          <li>Live build: Rishi sets up a working Claude workflow for a business type from the room. Start to finish, in real time.</li>
-        </ul>
-      </div>
-      <div class="module-outcome-block">
-        <div class="module-outcome-label">Outcome</div>
-        <div class="module-outcome-text">Participants leave with Claude configured for their business and at least one reusable workflow ready to run from Day 1.</div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- WHAT IS INCLUDED -->
-  <div class="included-dark">
-    <div class="included-deco included-deco-1"></div>
-    <div class="eyebrow" style="margin-bottom:16px;">
-      <span style="color:var(--gold);">Engagement Details</span>
-      <span style="display:block;width:48px;height:1px;background:var(--border);"></span>
-    </div>
-    <h2 class="section-title light">What Is Included</h2>
-    <div class="included-grid">
-      <div class="included-item">
-        <div class="included-dot"></div>
-        <div class="included-item-text">Full 4-hour in-person delivery in Hyderabad</div>
-      </div>
-      <div class="included-item">
-        <div class="included-dot"></div>
-        <div class="included-item-text">All session materials and reference guides</div>
-      </div>
-      <div class="included-item">
-        <div class="included-dot"></div>
-        <div class="included-item-text">Q&amp;A at the end of the session</div>
-      </div>
-      <div class="included-item">
-        <div class="included-dot"></div>
-        <div class="included-item-text">Live hands-on demos with real business scenarios throughout</div>
-      </div>
-    </div>
-  </div>
+  <hr class="section-divider">
 
   <!-- INVESTMENT -->
+  <div class="eyebrow">Investment</div>
   <div class="investment-block">
-    <div class="investment-left">
-      <div class="investment-label">Total Investment</div>
-      <div class="investment-amount">INR 4,00,000</div>
-      <div class="investment-note">+ 18% GST + Conveyance Fees</div>
+    <div class="investment-deco investment-deco-1"></div>
+    <div class="investment-deco investment-deco-2"></div>
+    <div>
+      <div class="eyebrow" style="color: var(--gold); margin-bottom: 16px;">Engagement Fee</div>
+      <div class="investment-amount">Rs. 1,75,000</div>
+      <div class="investment-note">+ GST applicable</div>
+      <div class="investment-sub">+ Conveyance fees for in-person delivery in Hyderabad</div>
     </div>
-    <div class="investment-right">
-      <div class="investment-tag">For the full 4-hour exclusive workshop</div>
+    <div>
+      <div class="inclusions-title">What Is Included</div>
+      <ul class="inclusion-list">
+        <li>Full 2-hour in-person delivery in Hyderabad</li>
+        <li>All session materials and reference guides</li>
+        <li>Live hands-on demos with real business scenarios</li>
+        <li>Q and A at the end of the session</li>
+      </ul>
     </div>
   </div>
 
 </main>
-   <hr class="section-divider">
-
-  <!-- ABOUT -->
-  <div class="about-section">
-    <div class="about-header">
-      <div class="avatar">RJ</div>
-      <div>
-        <div class="about-name">Rishi Jain</div>
-        <div class="about-title-line">Co-Founder, Digital Scholar. Best Digital Marketing Institute in India, 2024 (Elets)</div>
-      </div>
-    </div>
-    <p>Rishi Jain is the Co-Founder of Digital Scholar, recognized as the Best Digital Marketing Institute in India in 2024 by Elets. He has delivered corporate AI training to teams at Deloitte, Lakme, IDP Education, UTI Mutual Fund, Autodesk, Axis Bank, and over 30 other organisations.</p>
-    <p>Every session is built around live demonstrations, hands-on exercises, and workflows participants can use the same day.</p>
-    <div class="client-logos">
-      <div class="client-pill">Deloitte</div>
-      <div class="client-pill">Lakme</div>
-      <div class="client-pill">IDP Education</div>
-      <div class="client-pill">UTI Mutual Fund</div>
-      <div class="client-pill">Autodesk</div>
-      <div class="client-pill">Axis Bank</div>
-      <div class="client-pill">30+ Organisations</div>
-    </div>
-  </div>
-
-</div>
-
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-main">
-    <div class="footer-brand">
-      Digital Scholar
-      <span>Prepared by Rishi Jain</span>
-    </div>
-    <div class="footer-meta">
-      JITO Hyderabad. AI for Business Leaders.<br>
-      4-Hour Corporate Training Proposal
-    </div>
-  </div>
-  <hr class="footer-divider">
-  <div class="footer-confidential">This proposal is confidential and prepared exclusively for JITO Hyderabad by Digital Scholar.</div>
+  <div class="footer-brand">Digital Scholar</div>
+  <div class="footer-center">JITO Hyderabad. AI for Business Leaders. 2025</div>
+  <div class="footer-confidentiality">This document is confidential and prepared exclusively for JITO Hyderabad. Not for distribution.</div>
 </footer>
 
 </body>
